@@ -63,6 +63,12 @@
         "title": "Featured Products"
       }
     },
+    "16369279000fad60c5": {
+      "type": "full-width-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/fifth-large-2.jpg"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -245,6 +251,7 @@
   "order": [
     "163692285511bca0da",
     "163692503093178e69",
+    "16369279000fad60c5",
     "image_banner",
     "rich_text",
     "featured_products",

@@ -1,0 +1,27 @@
+<section>
+    <img
+        src="{{ section.settings.image.src | img_url: '1920x1080' }}"
+        alt="{{ section.settings.image.alt }}"
+        class="object-cover w-full h-128"
+        height="512"
+        width="1920"
+    />
+</section>
+
+{% schema %}
+{
+    "name": "Full Width Image",
+    "settings": [
+        {
+            "type": "image_picker",
+            "label": "Image",
+            "id": "image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Full Width Image"
+        }
+    ]
+}
+{% endschema %}
