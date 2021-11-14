@@ -16,8 +16,17 @@ body {
     max-width: 1140px !important;
 }
 
-.text-shadow {
-    text-shadow: 2px 2px #0f0f0f;
+.btn{
+    @apply uppercase block px-8 py-2 border-1;
+}
+
+.btn.btn-primary{
+    @apply bg-brand-primary-500 text-white border-brand-primary-500;
+}
+
+.btn.btn-primary:hover,
+.btn-.btn-primary:focus{
+    @apply bg-white text-brand-primary-500;
 }
 
 @tailwind utilities;

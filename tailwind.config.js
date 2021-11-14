@@ -6,7 +6,7 @@ module.exports = {
         extend: {
             colors: {
                 'brand-primary': {
-                    500: '#FF5700',
+                    500: '#262627',
                     700: '#D95A20',
                     900: '#953E16',
                 },
@@ -21,7 +21,7 @@ module.exports = {
                 },
             },
             borderWidth: {
-                '1/2': '0.5px',
+                '1': '1px'
             },
             fontSize: {
                 sm: '0.875rem',
