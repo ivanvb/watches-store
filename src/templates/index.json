@@ -29,6 +29,40 @@
         "mobileTop": true
       }
     },
+    "163692503093178e69": {
+      "type": "featured-products",
+      "blocks": {
+        "f91a13b3-da07-42cd-b008-ef011a1b96aa": {
+          "type": "product",
+          "settings": {
+            "product": "all-black",
+            "subtitle": "Opaque Noire Edition"
+          }
+        },
+        "f41386dc-f38b-4109-bacc-ce75fa0fbf04": {
+          "type": "product",
+          "settings": {
+            "product": "russi",
+            "subtitle": "The Instant Classic"
+          }
+        },
+        "92d9ac4a-19fc-4872-bfc5-41b9082da1f0": {
+          "type": "product",
+          "settings": {
+            "product": "cobalt",
+            "subtitle": "Metallic Blue"
+          }
+        }
+      },
+      "block_order": [
+        "f91a13b3-da07-42cd-b008-ef011a1b96aa",
+        "f41386dc-f38b-4109-bacc-ce75fa0fbf04",
+        "92d9ac4a-19fc-4872-bfc5-41b9082da1f0"
+      ],
+      "settings": {
+        "title": "Featured Products"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -210,6 +244,7 @@
   },
   "order": [
     "163692285511bca0da",
+    "163692503093178e69",
     "image_banner",
     "rich_text",
     "featured_products",

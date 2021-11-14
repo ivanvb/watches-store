@@ -1,0 +1,53 @@
+<section class="container py-16">
+    <h2 class="text-center heading-2 mb-12">{{ section.settings.title }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {%- for block in section.blocks -%}
+        {%- if block.type == "product" -%}
+        {%- assign product = block.settings.product -%}
+            {% render 'component-item-card', 
+                        title: product.title,
+                        subtitle: block.settings.subtitle,
+                        image: product.featured_image,
+                        backgroundClass: 'bg-gray-100',
+                        url: product.url
+            %}
+        {%- endif -%}
+    {%- endfor -%}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Featured Products",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "label": "Subtitle"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Products"
+        }
+    ]
+}
+{% endschema %}
