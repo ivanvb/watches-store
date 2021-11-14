@@ -29,4 +29,8 @@ body {
     @apply bg-white text-brand-primary-500;
 }
 
+.heading-1{
+    @apply font-medium text-5xl;
+}
+
 @tailwind utilities;

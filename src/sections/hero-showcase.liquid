@@ -1,0 +1,84 @@
+<section class="relative py-16 min-h-200 flex {% if section.settings.mobileTop %} flex-col {% else %} flex-col-reverse {% endif %} justify-center items-center bg-no-repeat">
+    <img
+        class="absolute h-full w-full object-cover hidden lg:block"
+        src="{{ section.settings.backgroundImage.src | img_url: '1920x1080' }}"
+        alt="{{ section.settings.backgroundImage.alt }}"
+    />
+    <img
+        class="relative h-full w-full object-cover block lg:hidden {% if section.settings.mobileTop %} mb-16 {% else %} mt-16 {% endif %}"
+        src="{{ section.settings.backgroundImage.src | img_url: '720x480' }}"
+        alt="{{ section.settings.backgroundImage.alt }}"
+        width="720"
+        height="480"
+    />
+    <div class="container text-center lg:text-left relative z-10">
+        <h1 class="heading-1">{{ section.settings.title }}</h1>
+        <p class="w-full lg:max-w-4xl mt-4">
+            {{ section.settings.description }}
+        </p>
+
+        <div class="flex space-x-12 mt-12 justify-center lg:justify-start">
+            {%- for block in section.blocks -%}
+                {%- if block.type == 'cta' -%}
+                    <a 
+                        class="btn btn-primary"
+                        href="{{ block.settings.url }}">
+                            {{ block.settings.label }}
+                    </a>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Hero Showcase",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "backgroundImage",
+            "label": "Background Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "checkbox",
+            "id": "mobileTop",
+            "label": "Put image on top in mobile",
+            "default": false
+        }
+    ],
+    "blocks": [
+        {
+            "type": "cta",
+            "name": "Call To Action",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Url"                
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Showcase"
+        }
+    ]
+}
+{% endschema %}

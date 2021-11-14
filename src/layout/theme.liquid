@@ -108,7 +108,6 @@
       }
     {% endstyle %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'build.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
@@ -131,7 +130,6 @@
     </a>
 
     {% section 'announcement-bar' %}
-    <p class="text-red-500">hello its mi</p>
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
