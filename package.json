@@ -1,0 +1,14 @@
+{
+    "name": "watches-store",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "tailwindcss -i tailwind/base.css -o src/assets/build.css --watch"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.0",
+        "postcss": "^8.3.11",
+        "tailwindcss": "^2.2.19"
+    }
+}
