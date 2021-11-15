@@ -3,6 +3,7 @@
         class="absolute h-full w-full object-cover hidden lg:block"
         src="{{ section.settings.backgroundImage.src | img_url: '1920x1080' }}"
         alt="{{ section.settings.backgroundImage.alt }}"
+        loading="lazy"
     />
     <img
         class="relative h-full w-full object-cover block lg:hidden {% if section.settings.mobileTop %} mb-16 {% else %} mt-16 {% endif %}"
@@ -10,6 +11,7 @@
         alt="{{ section.settings.backgroundImage.alt }}"
         width="720"
         height="480"
+        loading="lazy"
     />
     <div class="container text-center lg:text-left lg:relative lg:z-10">
         <h1 class="heading-1">{{ section.settings.title }}</h1>

@@ -23,6 +23,7 @@
             alt="{{ article.image.alt }}"
             class="h-168 w-full object-cover col-span-8"
             height="400"
+            loading="lazy"
         />
     </div>
 {%- elsif articleLayout == 'compact' %}
@@ -32,6 +33,7 @@
             alt="{{ article.image.alt }}"
             class="h-128 w-full object-cover"
             height="400"
+            loading="lazy"
         />
         <div class="px-6 pt-0 pb-12 flex-grow flex flex-col items-start ">
             <h3 class="heading-4 mt-4">{{ article.title }}</h3>
