@@ -37,4 +37,12 @@ body {
     @apply font-medium text-5xl;
 }
 
+.heading-3{
+    @apply font-medium text-4xl;
+}
+
+.heading-4{
+    @apply font-medium text-3xl;
+}
+
 @tailwind utilities;

@@ -69,6 +69,12 @@
         "image": "shopify:\/\/shop_images\/fifth-large-2.jpg"
       }
     },
+    "1636939006740adbc5": {
+      "type": "recent-blogposts",
+      "settings": {
+        "title": "Recent Blogposts"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -252,6 +258,7 @@
     "163692285511bca0da",
     "163692503093178e69",
     "16369279000fad60c5",
+    "1636939006740adbc5",
     "image_banner",
     "rich_text",
     "featured_products",

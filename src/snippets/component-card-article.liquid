@@ -1,0 +1,44 @@
+{% comment %}
+    Renders the preview of an article
+    
+    Accepts:
+        - article: {Article} article that will be previewd
+        - layout: {'compact'|'large'} default: compact
+        - class: {String} extra classes to be added to the container
+{% endcomment %}
+
+{%- assign articleLayout = layout | default: 'compact' -%}
+
+{%- if articleLayout == 'large' %}
+    <div href="{{ article.url }}" class="col-span-12 grid-cols-12 gap-6 shadow hidden lg:grid {{ class }}">
+        <div class="col-span-4 p-6">
+            <h3 class="heading-3 mt-4 leading-10">{{ article.title }}</h3>
+            <p class="mt-4">{{ article.excerpt }}</p>
+            <a href="{{ article.url }}" class="btn btn-primary inline-block mt-12">
+                Read More
+            </a>
+        </div>
+        <img
+            src="{{ article.image.src | img_url: '900x900'}}"
+            alt="{{ article.image.alt }}"
+            class="h-168 w-full object-cover col-span-8"
+            height="400"
+        />
+    </div>
+{%- elsif articleLayout == 'compact' %}
+    <div href="{{ article.url }}" class="lg:col-span-6 row-span-1 shadow {{ class }}">
+        <img
+            src="{{ article.image.src | img_url: '800x800'}}"
+            alt="{{ article.image.alt }}"
+            class="h-128 w-full object-cover"
+            height="400"
+        />
+        <div class="p-6 pt-0">
+            <h3 class="heading-4 mt-4">{{ article.title }}</h3>
+            <p class="mt-2">{{ article.excerpt }}</p>
+            <a href="{{ article.url }}" class="btn btn-primary mt-6 inline-block">
+                Read More
+            </a>
+        </div>
+    </div>
+{%- endif -%}
