@@ -20,11 +20,7 @@
     </nav>
     <a href="{{ routes.cart_url }}" class="h-12 w-12 ml-auto">
       {%- liquid
-        if cart == empty
-          render 'icon-cart-empty'
-        else
           render 'icon-cart'
-        endif
       -%}
     </a>
     <button class="block lg:hidden h-6 w-6 ml-6" id="openMobileMenu">
