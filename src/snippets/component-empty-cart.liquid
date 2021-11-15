@@ -1,0 +1,17 @@
+{% comment %}
+    Renders an empty cart alert with a call to action to continue buying
+
+    Accepts:
+        - title: {String}
+        - url: {String} url to direct the user to continue buying
+        - cta: {String} call to action text to continue buying
+{% endcomment %}
+
+<h2 class="text-center heading-2 mt-12">
+    {{ title }}
+</h2>
+<div class="flex justify-center">
+    <a href="{{ url }}" class="mt-6 block btn btn-primary">
+        {{ cta }}
+    </a>
+</div>

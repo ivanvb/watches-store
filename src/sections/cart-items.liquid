@@ -1,0 +1,19 @@
+<section>
+    <h1 class="heading-1 my-16 mb-8 text-center">Cart</h1>
+      {%- if cart.item_count > 0 -%}
+        {% render 'component-cart-items' %}
+      {%- else -%}
+        {% render 'component-empty-cart', title: 'Your Cart is Empty', url: '/collections/all', cta: 'Continue Buying' %}
+      {%- endif -%}
+  </section>
+
+{% schema %}
+{
+    "name": "Cart Items",
+    "presets": [
+        {
+            "name": "Cart Items"
+        }
+    ]
+}
+{% endschema %}

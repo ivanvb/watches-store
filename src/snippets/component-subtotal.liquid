@@ -1,0 +1,16 @@
+{% comment %}
+    Renders the subtotal price of the items in the cart. Must be rendered
+    inside of a checkout form.
+{% endcomment %}
+
+<div class="w-full md:w-6/12 lg:w-4/12">
+    <h2 class="heading-3 mb-3">Subtotal</h2>
+    <p>Items ( {{ cart.item_count }} ): {{ cart.total_price | money_with_currency }}</p>
+    <small class="text-gray-500">
+      Taxes and Shipping calculated at checkout
+    </small>
+    <hr class="my-6"/>
+    <button type="submit" name="checkout" class="btn btn-primary inline-block">
+      Checkout
+    </a>
+  </div>
