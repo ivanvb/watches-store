@@ -49,4 +49,12 @@ body {
     @apply text-4xl mb-2
 }
 
+.pill{
+    @apply rounded-full px-5 py-2 border-1 border-brand-secondary-500 bg-gray-100 text-center my-2;
+}
+
+.pill.active{
+    @apply bg-brand-primary-500 text-white border-brand-primary-500;
+}
+
 @tailwind utilities;

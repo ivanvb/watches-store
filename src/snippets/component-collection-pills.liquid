@@ -1,0 +1,23 @@
+{% comment %}
+    Renders a list of links in the form of a pill that can be used to 
+    navigate between collections.
+
+    The active collection is given the 'active' class.
+{% endcomment%}
+
+<nav class="mt-4" role="navigation">
+    <ul class="container space-x-3 lg:space-x-4 flex flex-wrap ">
+        <li class="pill {% if request.path == '/collections/all' %} active {% endif %}">
+            <a href="/collections/all">
+                All
+            </a>
+        </li>
+        {% for collection in collections %}
+            <li class="pill {% if request.path == collection.url %} active {% endif %}">
+                <a href="{{ collection.url }}">
+                    {{ collection.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

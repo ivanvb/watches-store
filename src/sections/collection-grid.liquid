@@ -18,6 +18,8 @@
             {{ collection.title }}
         {%- endif -%}
     </h1>
+
+    {% render 'component-collection-pills' %}
     {% paginate collection.products by 12 %}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container gap-8 mt-12">
             {% for product in collection.products %}
