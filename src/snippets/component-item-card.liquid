@@ -7,9 +7,10 @@
     - subtitle: {String} Card subtitle
     - image: {Image Object} Card Image
     - backgroundClass: {String} class to display a background color
+    - containerClass: {String} class to be applied to the card container
 {% endcomment%}
 
-<a href="{{ url}}" class="group">
+<a href="{{ url}}" class="group {{ containerClass }}">
     <div class="overflow-hidden">
         <img 
             src="{{ image.src | img_url: '500x500' }}"

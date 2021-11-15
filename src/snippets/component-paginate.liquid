@@ -1,0 +1,44 @@
+{% comment %}
+    Renders a set of links for a paginated result. Must be used within a 'paginate'.
+
+    Accepts:
+        - paginate: {Pagination} The pagination object
+{% endcomment %}
+
+{%- if paginate.parts.size > 0 -%}
+<div>
+    <nav role="navigation" aria-label="pagination">
+        <ul class="flex justify-center space-x-8">
+          {%- if paginate.previous -%}
+            <li>
+                <a href="{{ paginate.previous.url }}{{ anchor }}" class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.previous' | t }}">
+                  Prev
+                </a>
+              </li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+                <li>
+                    {%- if part.is_link -%}
+                        <a href="{{ part.url }}{{ anchor }}"  aria-label="Go to page {{ part.title }}">{{ part.title }}</a>
+                    {%- else -%}
+                        {%- if part.title == paginate.current_page -%}
+                            <span class="underline" aria-current="page" aria-label="Page {{ page.title }}">{{ part.title }}</span>
+                        {%- else -%}
+                            <span>{{ part.title }}</span>
+                        {%- endif -%}
+                    {%- endif -%}
+                </li>
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+                <li>
+                    <a href="{{ paginate.next.url }}{{ anchor }}" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.next' | t }}" >
+                        Next
+                    </a>
+                </li>
+            {%- endif -%}
+        </ul>
+    </nav>
+</div>
+{%- endif -%}

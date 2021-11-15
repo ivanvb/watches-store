@@ -1,0 +1,66 @@
+<section  class="pb-16">
+    {%- assign bannerImage = collection.featured_image -%}
+    {%- if collection.title == 'Products' -%}
+        {%- assign bannerImage = section.settings.defaultImage -%}
+    {%- endif -%}
+    <img
+        src="{{ bannerImage.src | img_url: '1920x800' }}"
+        alt=""
+        height="320"
+        width="1920"
+        class="h-96 object-cover"
+        style="object-position: 50% 40%;"
+    />
+    <h1 class="heading-1 text-center mt-16">
+        {%- if collection.title == 'Products' -%}
+            {{ section.settings.defaultTitle }}
+        {%- else -%}
+            {{ collection.title }}
+        {%- endif -%}
+    </h1>
+    {% paginate collection.products by 12 %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container gap-8 mt-12">
+            {% for product in collection.products %}
+                    {%- assign price = product.price | money -%}
+                    {% render 'component-item-card', 
+                            url: product.url,
+                            image: product.featured_image,
+                            title: product.title,
+                            subtitle: price,
+                            backgroundClass: 'bg-gray-100',
+                            containerClass: 'text-center shadow pb-8'
+                    %}
+            {% endfor %}
+        </div>
+        {%- if paginate.pages > 1 -%}
+            <div class="mt-6">
+                {%- render 'component-paginate', paginate: paginate -%}
+            </div>
+        {%- endif -%}
+    {% endpaginate %}
+</section>
+
+{% schema %}
+{
+    "name": "Collection Grid",
+    "settings": [
+        {
+            "type": "text",
+            "id": "defaultTitle",
+            "label": "Default Title",
+            "info": "Title to be displayed in the All Collection"
+        },
+        {
+            "type": "image_picker",
+            "id": "defaultImage",
+            "label": "Default Image",
+            "info": "Image to be displayed in the All Collection"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collection Grid"
+        }
+    ]
+}
+{% endschema %}

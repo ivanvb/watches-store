@@ -1,18 +1,14 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "1636942736896c6b96": {
+      "type": "collection-grid",
       "settings": {
-      }
-    },
-    "product-grid": {
-      "type": "main-collection-product-grid",
-      "settings": {
+        "defaultTitle": "Watches",
+        "defaultImage": "shopify:\/\/shop_images\/Artboard_1_copy_58-1_2100x_5fb33303-58df-40dd-9c8f-a4286f071fc7.jpg"
       }
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "1636942736896c6b96"
   ]
 }
