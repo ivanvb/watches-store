@@ -26,19 +26,21 @@
         />
     </div>
 {%- elsif articleLayout == 'compact' %}
-    <div href="{{ article.url }}" class="lg:col-span-6 row-span-1 shadow {{ class }}">
+    <div href="{{ article.url }}" class=" lg:col-span-6 row-span-1 shadow h-full flex flex-col {{ class }}">
         <img
             src="{{ article.image.src | img_url: '800x800'}}"
             alt="{{ article.image.alt }}"
             class="h-128 w-full object-cover"
             height="400"
         />
-        <div class="p-6 pt-0">
+        <div class="px-6 pt-0 pb-12 flex-grow flex flex-col items-start ">
             <h3 class="heading-4 mt-4">{{ article.title }}</h3>
             <p class="mt-2">{{ article.excerpt }}</p>
-            <a href="{{ article.url }}" class="btn btn-primary mt-6 inline-block">
-                Read More
-            </a>
+            <div class="mt-auto">
+                <a href="{{ article.url }}" class="btn btn-primary mt-6 inline-block">
+                    Read More
+                </a>
+            </div>
         </div>
     </div>
 {%- endif -%}
