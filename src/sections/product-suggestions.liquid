@@ -1,0 +1,41 @@
+<section class="py-16 container">
+    {%- assign collection = product.collections[0] -%}
+
+    <h2 class="heading-2 text-center mb-8">More from {{ collection.title }}</h2>
+    <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {%- assign count = 0 -%}
+            {% for collectionProduct in collection.products %}
+                {% unless collectionProduct.title == product.title %}
+                    {%- assign price = product.price | money -%}
+                    {% render 'component-item-card', 
+                            url: collectionProduct.url,
+                            image: collectionProduct.featured_image,
+                            title: collectionProduct.title,
+                            subtitle: price,
+                            backgroundClass: 'bg-gray-100',
+                            containerClass: 'text-center shadow pb-8'
+                    %}
+                    {%- assign count = count | plus: 1 -%}
+                    {%- if count == 3 -%} {%- break -%} {%- endif -%}
+                {% endunless %}
+            {% endfor %}
+        </div>
+        <div class="flex justify-center">
+            <a href="{{ collection.url }}" class="btn btn-primary inline-block mt-8">
+                See All
+            </a>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Product Suggestions",
+    "presets": [
+        {
+            "name": "Product Suggestions"
+        }
+    ]
+}
+{% endschema %}
