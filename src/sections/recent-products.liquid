@@ -1,0 +1,27 @@
+<section class="py-16 container mt-24">
+    <h2 class="heading-2 mb-8 text-center">Recent Products</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for product in collections.all.products %}
+            {%- assign price = product.price | money -%}
+            {% render 'component-item-card', 
+                title: product.title,
+                subtitle: price,
+                image: product.featured_image,
+                backgroundClass: 'bg-gray-100',
+                url: product.url
+            %}
+            {%- if forloop.index == 3 -%} {%- break -%} {%- endif -%}
+        {% endfor %}
+        </div>
+</section>
+
+{% schema %}
+{
+    "name": "Recent products",
+    "presets": [
+        {
+            "name": "Recent Products"
+        }
+    ]
+}
+{% endschema %}
