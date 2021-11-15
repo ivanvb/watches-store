@@ -1,12 +1,20 @@
 {
   "sections": {
-    "main": {
-      "type": "main-blog",
+    "163694595916d92439": {
+      "type": "full-width-image",
       "settings": {
+        "image": "shopify:\/\/shop_images\/campaign-new.jpg"
+      }
+    },
+    "163694645566e5ebf7": {
+      "type": "blogposts-grid",
+      "settings": {
+        "title": "Blogposts"
       }
     }
   },
   "order": [
-    "main"
+    "163694595916d92439",
+    "163694645566e5ebf7"
   ]
 }

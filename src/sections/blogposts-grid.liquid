@@ -1,0 +1,29 @@
+<section class="py-16">
+    <h1 class="heading-1 text-center">{{ blog.title }}</h1>
+  
+    {%- paginate blog.articles by 6 -%}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container gap-8 mt-12">
+            {%- for article in blog.articles -%}
+              <div class="blog-articles__article article">
+                {% render 'component-card-article', article: article %}
+              </div>
+            {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <div class="mt-6">
+          {%- render 'component-paginate', paginate: paginate -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+</section>
+
+{% schema %}
+{
+    "name": "Blogposts Grid",
+    "presets": [
+        {
+            "name": "Blogposts Grid"
+        }
+    ]
+}
+{% endschema %}
