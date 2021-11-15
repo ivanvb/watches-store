@@ -45,4 +45,8 @@ body {
     @apply font-medium text-3xl;
 }
 
+.article h2{
+    @apply text-4xl mb-2
+}
+
 @tailwind utilities;

@@ -1,0 +1,26 @@
+<section>
+    <img
+      src="{{ article.image.src | img_url: '1200x1200' }}"
+      alt="{{ article.title }}"
+      height="800"
+      width="1920"
+      class="h-128 w-full lg:h-200 object-cover"
+    />
+    <div class="container article">
+      <h1 class="heading-1 text-center mt-8 mb-10">{{ article.title }}</h1>
+      <div class="mb-16 lg:px-32"
+        {{ article.content }}
+      </div>
+    </div>
+  </section>
+
+{% schema %}
+{
+    "name": "Article Content",
+    "presets": [
+        {
+            "name": "Article Content"
+        }
+    ]
+}
+{% endschema %}
