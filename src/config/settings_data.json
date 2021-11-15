@@ -10,26 +10,15 @@
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
     "sections": {
-      "announcement-bar": {
-        "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "color_scheme": "background-1"
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
-        "settings": {
-        }
-      },
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/5TH_Logo_no_border_1_a8b2c597-98e1-4b17-94d6-77a494c9a55e.png"
+          "logo": "shopify:\/\/shop_images\/5TH_Logo_no_border_1_e655cdfe-4189-4b28-b0f4-ed963fd61bc5_1.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
         }
       }
     },
